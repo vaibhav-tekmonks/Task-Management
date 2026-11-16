@@ -1,0 +1,48 @@
+<label for="new-task-title">New task</label>
+<input
+    id="new-task-title"
+    type="text"
+    placeholder="For example: Review project notes">
+
+<button
+    type="button"
+    onclick="window.monkshu_env.components['task-list'].prepareTask(this)">
+    Add task
+</button>
+
+<p id="task-message"></p>
+
+
+<button
+    type="button"
+    onclick="window.monkshu_env.components['task-list'].refresh(this)">
+    Refresh tasks
+</button>
+
+<ul>
+    {{#tasks}}
+        <li>
+            {{title}}
+
+            {{#completed}}
+                <span>Completed</span>
+            {{/completed}}
+
+            {{^completed}}
+                <button
+                    type="button"
+                    data-task-id="{{id}}"
+                    onclick="window.monkshu_env.components['task-list'].completeTask(this)">
+                    Complete
+                </button>
+            {{/completed}}
+
+            <button
+                type="button"
+                data-task-id="{{id}}"
+                onclick="window.monkshu_env.components['task-list'].deleteTask(this)">
+                Delete
+            </button>
+        </li>
+    {{/tasks}}
+</ul>

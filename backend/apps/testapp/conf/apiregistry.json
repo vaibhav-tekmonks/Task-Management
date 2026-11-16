@@ -1,0 +1,6 @@
+{
+    "/apps/testapp/tasks": "apis/tasks.js?get=true",
+    "/apps/testapp/tasks/create": "apis/createTask.js",
+    "/apps/testapp/tasks/complete": "apis/completeTask.js",
+    "/apps/testapp/tasks/delete": "apis/deleteTask.js"
+}
